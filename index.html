@@ -17,27 +17,30 @@
     <title>Workshop</title>
 </head>
 
-<body>
+<body class="bg-dark">
     <div id="app">
-        <div class="container">
-            <h1>Todo List</h1>
-            <ul>
-                <li v-for="(todo, i) in todos">{{ todo.text }}
-                    <button @click="removeTodo(i)">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </li>
-            </ul>
-            <form @submit.prevent="addTodo" class="g-3 mt-2 me-0">
-                <div class="d-inline-block">
-                    <label for="newtodo" class="visually-hidden">NewToDo</label>
-                    <input v-model="newTodo" type="text" class="text-newtodo" id="newtodo"
-                        placeholder="Inserisci elemento...">
-                </div>
-                <div class="d-inline-block">
-                    <button class="button-newtodo">Inserisci</button>
-                </div>
-            </form>
+        <div class="container text-light d-flex justify-content-center bg-dark bg-gradient">
+            <div class="mt-3">
+                <h1 class="m-3 text-info fw-bolder d-flex justify-content-center">Todo List</h1>
+                <ul class="mt-2">
+                    <li class="m-1" v-for="(todo, i) in todos">{{ todo.text }}
+                        <button class="bg-transparent border-0" @click="removeTodo(i)">
+                            <i class="text-white fa fa-trash"></i>
+                        </button>
+                        <hr>
+                    </li>
+                </ul>
+                <form @submit.prevent="addTodo" class="g-3 mt-2 me-0">
+                    <div class="d-inline-block">
+                        <label for="newtodo" class="visually-hidden">NewToDo</label>
+                        <input v-model="newTodo" type="text" class="text-newtodo p-1" id="newtodo"
+                            placeholder="Inserisci elemento...">
+                    </div>
+                    <div class="d-inline-block">
+                        <button class="button-newtodo border-white text-white bg-info p-1">Inserisci</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
